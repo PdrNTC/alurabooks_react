@@ -1,19 +1,11 @@
 import './App.css';
-import Logo from './componentes/Logo';
-import OpcoesHeader from './componentes/OpcoesHeader';
-import OpcoesIcones from './componentes/OpcoesIcones';
+import Header from './componentes/Header';
 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-
-        <Logo></Logo> {/* componente Logo */}
-        <OpcoesHeader></OpcoesHeader> {/* componente OpcoesHeader */}
-        <OpcoesIcones></OpcoesIcones> {/* componente OpcoesIcones */}
-        
-      </header>
+      <Header/>
     </div>
   );
 }
