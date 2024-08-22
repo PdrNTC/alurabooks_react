@@ -1,5 +1,6 @@
 import livro from '../../imgs/livro.png';
 
+//Dados mockados para usar no Front-end sem depender do Back.
 export const livros = [
     {
         nome: 'Liderança em Design',

@@ -1,5 +1,6 @@
-import Pesquisa from '../componentes/Pesquisa';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { getFavoritos } from '../services/favoritos';
 
 // Criando um componente estilizado direto sem precisar de CSS //
 const AppContainer = styled.div`
@@ -9,9 +10,22 @@ const AppContainer = styled.div`
 `
 
 function Favoritos() {
+  const [favoritos, setFavoritos] = useState([])
+
+  useEffect(() => {
+    fetchFavoritos()
+  }, [])
+
+  async function fetchFavoritos() {
+    const favoritosDaApi = await getFavoritos()
+    setFavoritos(favoritosDaApi)
+  }
+
   return (
     <AppContainer>
-      <Pesquisa />
+      { favoritos.map( favorito => (
+        <p>{favorito.nome}</p>
+      )) }
     </AppContainer>
   );
 }
